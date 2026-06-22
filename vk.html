@@ -1,0 +1,17 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<title>VK auth</title><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;max-width:640px;margin:24px auto;padding:0 16px}
+.box{background:#f3f4f6;border-radius:10px;padding:14px;word-break:break-all;font-size:15px;margin:8px 0}
+b{display:block;color:#555;font-size:13px;margin-top:10px}
+.full{font-size:13px;color:#333}</style></head>
+<body><h3>Авторизация получена</h3>
+<p>Скопируй и пришли весь адрес ниже (или отдельно code и device_id):</p>
+<b>Весь адрес</b><div class="box full" id="url"></div>
+<b>code</b><div class="box" id="code">—</div>
+<b>device_id</b><div class="box" id="dev">—</div>
+<script>
+var u=new URL(location.href);var q=u.searchParams;
+document.getElementById('url').textContent=location.href;
+document.getElementById('code').textContent=q.get('code')||'(нет)';
+document.getElementById('dev').textContent=q.get('device_id')||'(нет)';
+</script></body></html>
